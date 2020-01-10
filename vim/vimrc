@@ -1,0 +1,86 @@
+set nocompatible
+set history=700
+
+
+" --- UI ---
+" ----------
+
+if (has("termguicolors"))
+	set termguicolors
+endif
+
+syntax on   " enable syntax highlighting
+set number  " enable line numbers
+set ruler   " always show current cursor position
+set ttyfast " faster terminal redrawing
+
+set cmdheight=1  " limit command bar height
+set laststatus=2 " always show the status line
+
+set mouse=a
+if has("mouse_sgr")
+	set ttymouse=sgr
+else
+	set ttymouse=xterm2
+endif
+
+packadd! onedark.vim
+colorscheme onedark
+
+" --- Editing ---
+" ---------------
+
+set encoding=utf8
+set backspace=eol,start,indent " more traditional backspace behavior
+set whichwrap+=<,>,h,l,[,]     " move between lines with arrow keys
+set ffs=unix,dos,mac           " default to UNIX encoding
+set linebreak                  " softer line wrapping
+
+" use tabs as default indentation
+set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab copyindent preserveindent
+
+
+" override indentation of specific file types
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab copyindent preserveindent
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab copyindent preserveindent
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab copyindent preserveindent
+autocmd FileType sql setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab copyindent preserveindent
+
+set spelllang=en_gb " set spell checking language to British English
+
+" enable spell checking for specific file types
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+
+
+" --- Searching ---
+" -----------------
+
+set ignorecase                    " always ignore case when searching
+set incsearch ignorecase hlsearch " highlight search matches
+
+" search for current selection by pressing * or # in visual mode
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
+
+
+" --- Files ---
+" -------------
+
+set autoread                     " reread files when externally changes
+set wildignore=*.o,*.so,*~,*.pyc " ignore binary files
+
+
+" --- Key Bindings ---
+" --------------------
+
+" emulate copy/paste in visual mode (with control key)
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+
+" simplify moving around
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
