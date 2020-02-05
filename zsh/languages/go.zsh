@@ -5,5 +5,5 @@ if command_exists go; then
 	alias got="go test -v -cover -coverprofile=.gocover"
 	alias goc="go tool cover -html=.gocover"
 	alias gob="go test -v -bench . -benchmem"
-	alias gobuild="go build -ldflags '-s -w' -gcflags='-trimpath=${HOME}' -asmflags='-trimpath=${HOME}'"
+	alias gobuild="go build -trimpath -ldflags '-s -w'"
 fi
