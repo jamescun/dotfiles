@@ -10,3 +10,7 @@ if [ -d "$HOME/.pyenv" ]; then
 	eval "$(pyenv init --path)"
 	eval "$(pyenv virtualenv-init -)"
 fi
+
+if command_exists uv; then
+	export PATH=$PATH:$HOME/.local/bin
+fi
