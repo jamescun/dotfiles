@@ -6,4 +6,8 @@ if command_exists git; then
 	alias gpl="git pull"
 	alias gps="git push"
 	alias gcs="git commit -S -m"
+
+	if [ -d "$HOME/.radicle" ]; then
+		export PATH=$PATH:$HOME/.radicle/bin
+	fi
 fi
