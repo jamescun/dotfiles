@@ -1,0 +1,23 @@
+# ignore platform-specific index files
+.DS_Store
+Thumbs.db
+
+# ignore cryptographic files unless explicitly committed.
+*.asc
+*.key
+*.pem
+*.priv
+*.pub
+
+# ignore temp files.
+temp_*
+*.tmp
+*.swp
+
+# Go files.
+.gocover
+debug_*
+*.*prof
+
+# Python files.
+.venv

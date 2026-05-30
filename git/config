@@ -1,0 +1,18 @@
+[user]
+	name       = "James Cunningham"
+	email      = "me@jamescun.com"
+	signingkey = "C0BE641E841F15D5"
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
+
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+
+# aliases within the git command.
+[alias]
+	# git last: show last commit.
+	last = "log -1 --show-signature HEAD"
