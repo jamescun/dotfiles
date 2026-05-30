@@ -1,0 +1,28 @@
+# --------------------------------------------------------------------------- #
+# This is the base ZSH configuration, which loads everything else.
+#
+# $HOME/.zshrc must set the $DOTFILES environment variable pointing to this
+# repository, then `source $DOTFILES/zshrc`.
+# --------------------------------------------------------------------------- #
+
+# ensure GPG knows about our terminal before anything.
+export GPG_TTY=$(tty)
+
+# secrets are not contained within within Git, source from home directory.
+if [ -e "$HOME/.secrets" ]; then
+	source "$HOME/.secrets"
+fi
+
+# set $PROJECTS path for personal projects.
+export PROJECTS=$HOME/projects
+
+# if Homebrew is installed, load it before any other shell integration, which
+# may be installed with Homebrew.
+if [ -d "/opt/homebrew" ] ; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# import configuration files dynamically.
+for module in $DOTFILES/zsh/{functions,modules,languages}/*.zsh ; do
+	source $module
+done
