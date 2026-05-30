@@ -1,0 +1,20 @@
+---
+version: "3"
+
+env:
+  # DOTFILES is the path to where the dotfiles repository has been checked out.
+  DOTFILES: "{{ .ROOT_DIR }}"
+
+tasks:
+  setup:
+    desc: "setup home directory to use these dotfiles"
+    cmds:
+    # configure git to include git/config config and git/ignore.
+    - cmd: "git config --global include.path $DOTFILES/git/config"
+    - cmd: "git config --global core.excludesfile $DOTFILES/git/ignore"
+
+    # template a .vimrc into $HOME to include vim/vimrc config.
+    - cmd: "cat vim/vimrc.home | envsubst > $HOME/.vimrc"
+
+    # template a .zshrc into $HOME to include the zsh/zshrc config.
+    - cmd: "cat zsh/zshrc.home | envsubst > $HOME/.zshrc"
