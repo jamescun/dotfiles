@@ -15,6 +15,7 @@ tasks:
 
     # template a .vimrc into $HOME to include vim/vimrc config.
     - cmd: "cat vim/vimrc.home | envsubst > $HOME/.vimrc"
+    - cmd: "mkdir -p $HOME/.vim/pack; ln -s $DOTFILES/vim/pack $HOME/.vim/pack/dotfiles"
 
     # template a .zshrc into $HOME to include the zsh/zshrc config.
     - cmd: "cat zsh/zshrc.home | envsubst > $HOME/.zshrc"
