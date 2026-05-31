@@ -4,6 +4,7 @@ Thumbs.db
 
 # ignore cryptographic files unless explicitly committed.
 *.asc
+*.gpg
 *.key
 *.pem
 *.priv
