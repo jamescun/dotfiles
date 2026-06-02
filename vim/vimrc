@@ -42,7 +42,6 @@ set linebreak                  " softer line wrapping
 " use tabs as default indentation
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab copyindent preserveindent
 
-
 " override indentation of specific file types
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab copyindent preserveindent
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab copyindent preserveindent
