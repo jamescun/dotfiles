@@ -19,3 +19,6 @@ tasks:
 
     # template a .zshrc into $HOME to include the zsh/zshrc config.
     - cmd: "cat zsh/zshrc.home | envsubst > $HOME/.zshrc"
+
+    # create example .secrets in $HOME if one doesn't exist.
+    - cmd: 'if [ ! -f "$HOME/.secrets" ]; then cp $DOTFILES/zsh/secrets.home $HOME/.secrets; fi'
