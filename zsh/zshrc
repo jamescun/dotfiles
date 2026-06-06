@@ -13,8 +13,10 @@ if [ -e "$HOME/.secrets" ]; then
 	source "$HOME/.secrets"
 fi
 
-# set $PROJECTS path for personal projects.
-export PROJECTS=$HOME/projects
+# set $PROJECTS path for projects if not already set.
+if [[ ! -x $PROEJCTS ]]; then
+	export PROJECTS=$HOME/projects
+fi
 
 # if Homebrew is installed, load it before any other shell integration, which
 # may be installed with Homebrew.

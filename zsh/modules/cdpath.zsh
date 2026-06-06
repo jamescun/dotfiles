@@ -1,9 +1,8 @@
 # add project directories to $CDPATH.
-if [ -d "$PROJECTS/src" ]; then
-	for project in $PROJECTS/src/*/* ; do
-		export CDPATH=$CDPATH:$project
-	done
+if [ -d "$PROJECTS" ]; then
+	# default $CDPATH for projects is `<organization>/<project>`.
+	export CDPATH=$PROJECTS:$CDPATH
 
-	# trim trailing colon from $CDPATH.
-	export CDPATH=${CDPATH#:}
+	# trim trailing colon from $CDPATH, if any.
+	export CDPATH=${CDPATH%:}
 fi

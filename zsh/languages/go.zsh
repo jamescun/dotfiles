@@ -1,18 +1,10 @@
 if command_exists go; then
-	# use $HOME/go for dependencies, $HOME/projects for code.
-	export GOPATH=$HOME/go:$PROJECTS
+	# set $GOPATH use $HOME/.cache/go for dependency installation.
+	export GOPATH=$HOME/.cache/go
 
 	# add binaries built with go to $PATH.
-	export PATH=$PATH:$PROJECTS/bin:$HOME/go/bin
+	export PATH=$PATH:$HOME/.cache/go/bin
 
-	# add personal projects $GOPRIVATE to prevent using the module proxy.
-	for org in $PROJECTS/src/*/* ; do
-		# trim path to make import path.
-		import_path=${org#"$PROJECTS/src/"}
-
-		export GOPRIVATE=$GOPRIVATE:$import_path/*
-	done
-
-	# trim leading colon from $GOPRIVATE.
-	export GOPRIVATE=${GOPRIVATE#:}
+	# configure $GOPRIVATE to prevent using the module proxy.
+	export GOPRIVATE=$GOPRIVATE:github.com/jamescun/*
 fi
