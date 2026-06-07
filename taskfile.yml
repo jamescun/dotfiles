@@ -22,3 +22,5 @@ tasks:
 
     # create example .secrets in $HOME if one doesn't exist.
     - cmd: 'if [ ! -f "$HOME/.secrets" ]; then cp $DOTFILES/zsh/secrets.home $HOME/.secrets; fi'
+    - cmd: 'chmod 600 $HOME/.secrets'
+
