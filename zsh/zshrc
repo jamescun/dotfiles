@@ -14,7 +14,7 @@ if [ -e "$HOME/.secrets" ]; then
 fi
 
 # set $PROJECTS path for projects if not already set.
-if [[ ! -x $PROEJCTS ]]; then
+if [[ ! -x $PROJECTS ]]; then
 	export PROJECTS=$HOME/projects
 fi
 

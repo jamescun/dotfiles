@@ -1,5 +1,8 @@
 {
 	"yaml.schemas": {
-		"https://taskfile.dev/schema.json": "file:///Users/jc/projects/src/github.com/jamescun/dotfiles/taskfile.yml"
-	}
+		"https://taskfile.dev/schema.json": "taskfile.yml"
+	},
+	"cSpell.words": [
+		"restic"
+	]
 }

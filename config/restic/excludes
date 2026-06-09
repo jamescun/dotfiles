@@ -1,0 +1,5 @@
+# exclude .secrets files, these can be regenerated if lost.
+.secrets
+
+# exclude iOS Photo Libraries, they're backed up elsewhere.
+*.photoslibrary
