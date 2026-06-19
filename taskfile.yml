@@ -9,9 +9,10 @@ tasks:
   setup:
     desc: "setup home directory to use these dotfiles"
     cmds:
-    # configure git to include git/config config and git/ignore.
-    - cmd: "git config --global include.path $DOTFILES/git/config"
-    - cmd: "git config --global core.excludesfile $DOTFILES/git/ignore"
+    # configure git to include git config, attributes and excludes.
+    - cmd: "git config --global include.path $DOTFILES/config/git/config"
+    - cmd: "git config --global core.attributesfile $DOTFILES/config/git/attributes"
+    - cmd: "git config --global core.excludesfile $DOTFILES/config/git/excludes"
 
     # template a .vimrc into $HOME to include vim/vimrc config.
     - cmd: "cat vim/vimrc.home | envsubst > $HOME/.vimrc"
@@ -23,4 +24,3 @@ tasks:
     # create example .secrets in $HOME if one doesn't exist.
     - cmd: 'if [ ! -f "$HOME/.secrets" ]; then cp $DOTFILES/zsh/secrets.home $HOME/.secrets; fi'
     - cmd: 'chmod 600 $HOME/.secrets'
-

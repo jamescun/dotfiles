@@ -3,3 +3,6 @@
 
 # exclude iOS Photo Libraries, they're backed up elsewhere.
 *.photoslibrary
+
+# exclude ESPHome builds.
+*.esphome

@@ -1,0 +1,5 @@
+# exclude diffs from lock files.
+Cargo.lock -diff
+go.sum -diff
+package-lock.json -diff
+uv.lock -diff
