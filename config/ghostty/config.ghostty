@@ -4,6 +4,7 @@ font-size = 13
 
 # configure theme.
 theme = "Atom One Dark"
+background = "#282C34"
 
 # configure cursor.
 cursor-style = block
