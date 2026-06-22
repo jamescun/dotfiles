@@ -1,0 +1,23 @@
+# configure font.
+font-family = "Fira Code"
+font-size = 13
+
+# configure theme.
+theme = "Atom One Dark"
+
+# configure cursor.
+cursor-style = block
+
+# disable window title.
+title = " "
+macos-titlebar-proxy-icon = hidden
+
+# open new windows with current working directory.
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+# send xterm-256color not xterm-ghostty over SSH.
+shell-integration-features = ssh-env
+
+auto-update = check
