@@ -21,4 +21,8 @@ split-inherit-working-directory = true
 # send xterm-256color not xterm-ghostty over SSH.
 shell-integration-features = ssh-env
 
+# open quick terminal with Command + ;.
+keybind = global:cmd+;=toggle_quick_terminal
+
+
 auto-update = check
