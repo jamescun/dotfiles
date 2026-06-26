@@ -6,6 +6,11 @@ font-size = 13
 theme = "Atom One Dark"
 background = "#282C34"
 
+# add padding around the window.
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+
 # configure cursor.
 cursor-style = block
 
@@ -21,8 +26,8 @@ split-inherit-working-directory = true
 # send xterm-256color not xterm-ghostty over SSH.
 shell-integration-features = ssh-env
 
-# open quick terminal with Command + ;.
+# configure quick terminal, 'command + ;'.
 keybind = global:cmd+;=toggle_quick_terminal
-
+quick-terminal-size = 20%,50%
 
 auto-update = check
