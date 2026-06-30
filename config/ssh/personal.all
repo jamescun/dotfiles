@@ -1,0 +1,29 @@
+# vim: filetype=sshconfig
+
+#
+# SSH Configuration (All Platforms).
+#
+
+Host *
+	# automatically add private keys to SSH Agent.
+	AddKeysToAgent yes
+
+	# send terminal emulator name, version and True Color capabilities.
+	#
+	# remote server must be configured to accept these.
+	SendEnv TERM_PROGRAM TERM_VERSION COLORTERM
+
+	# use known_hosts from $DOTFILES, default to saving in $HOME/.ssh.
+	UserKnownHostsFile ${HOME}/.ssh/known_hosts ${DOTFILES}/data/ssh/personal.known_hosts
+
+
+Host github.com
+	IdentityFile ${HOME}/.ssh/github_ed25519
+
+
+Host codeberg.org
+	IdentityFile ${HOME}/.ssh/codeberg_ed25519
+
+Host *
+	# default to personal private key.
+	IdentityFile ${HOME}/.ssh/id_ed25519

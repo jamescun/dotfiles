@@ -5,6 +5,9 @@ env:
   # DOTFILES is the path to where the dotfiles repository has been checked out.
   DOTFILES: "{{ .ROOT_DIR }}"
 
+  # OS is the GOOS of the host platform.
+  OS: "{{OS}}"
+
 tasks:
   setup:
     desc: "setup home directory to use these dotfiles"
@@ -16,7 +19,7 @@ tasks:
 
     # template a .vimrc into $HOME to include vim/vimrc config.
     - cmd: "cat vim/vimrc.home | envsubst > $HOME/.vimrc"
-    - cmd: "mkdir -p $HOME/.vim/pack; ln -s $DOTFILES/vim/pack $HOME/.vim/pack/dotfiles"
+    - cmd: "mkdir -p $HOME/.vim/pack; ln -sf $DOTFILES/vim/pack $HOME/.vim/pack/dotfiles"
 
     # template a .zshrc into $HOME to include the zsh/zshrc config.
     - cmd: "cat zsh/zshrc.home | envsubst > $HOME/.zshrc"
@@ -24,3 +27,6 @@ tasks:
     # create example .secrets in $HOME if one doesn't exist.
     - cmd: 'if [ ! -f "$HOME/.secrets" ]; then cp $DOTFILES/zsh/secrets.home $HOME/.secrets; fi'
     - cmd: 'chmod 600 $HOME/.secrets'
+
+    # template a .ssh/config file into $HOME.
+    - cmd: "cat config/ssh/ssh_config | envsubst > $HOME/.ssh/config"

@@ -1,0 +1,8 @@
+# vim: filetype=sshconfig
+
+#
+# SSH Configuration (MacOS only).
+#
+
+# include OrbStack configuration.
+Include ${HOME}/.orbstack/ssh/config
