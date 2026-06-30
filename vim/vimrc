@@ -39,6 +39,10 @@ set whichwrap+=<,>,h,l,[,]     " move between lines with arrow keys
 set ffs=unix,dos,mac           " default to UNIX encoding
 set linebreak                  " softer line wrapping
 
+" enable modelines
+set modeline 
+set modelines=1
+
 " use tabs as default indentation
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab copyindent preserveindent
 
