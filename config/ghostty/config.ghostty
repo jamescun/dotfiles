@@ -1,5 +1,6 @@
 # configure font.
-font-family = "Fira Code"
+#font-family = "Fira Code"
+font-family = "Iosevka Term Extended"
 font-size = 13
 
 # configure theme.

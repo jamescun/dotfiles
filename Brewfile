@@ -38,3 +38,7 @@ brew "pinentry-mac"
 brew "pwgen"
 brew "wget"
 brew "xz"
+
+# fonts.
+brew "font-fira-code"
+brew "font-iosevka"
